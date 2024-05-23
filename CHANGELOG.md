@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [7.6.2] - 2024-05-23
 ### Fixed
 - [JsonSchema] [GH#799](https://github.com/janephp/janephp/pull/799) Do not implement `CacheableSupportsMethodInterface` when generating SF7 normalizers for schema and schema object properties
 - [JsonSchema] [GH#798](https://github.com/janephp/janephp/pull/798) Do not implements `CacheableSupportsMethodInterface` when generating SF7 normalizers
@@ -745,7 +746,8 @@ See :
 * https://github.com/janephp/jane/releases
 * https://github.com/janephp/openapi/releases
 
-[Unreleased]: https://github.com/janephp/janephp/compare/v7.6.1...HEAD
+[Unreleased]: https://github.com/janephp/janephp/compare/v7.6.2...HEAD
+[7.6.2]: https://github.com/janephp/janephp/compare/v7.6.1...v7.6.2
 [7.6.1]: https://github.com/janephp/janephp/compare/v7.6.0...v7.6.1
 [7.6.0]: https://github.com/janephp/janephp/compare/v7.5.6...v7.6.0
 [7.5.6]: https://github.com/janephp/janephp/compare/v7.5.5...v7.5.6
