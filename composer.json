@@ -65,8 +65,7 @@
     },
     "conflict": {
         "symfony/framework-bundle": "5.1.0",
-        "symfony/property-info": "5.1.6 || 5.1.7",
-        "nikic/php-parser": "<4.0.4"
+        "symfony/property-info": "5.1.6 || 5.1.7"
     },
     "extra": {
         "branch-alias": {
