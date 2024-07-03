@@ -9,6 +9,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - [Jane] [GH#809](https://github.com/janephp/janephp/pull/809) Add support for PHP Parser v5
 
+### Fixed
+- [JsonSchema][OpenApiCommon] [GH#811](https://github.com/janephp/janephp/pull/811) add Symfony command configure() void return, avoid deprecations
+
 ## [7.7.0] - 2024-06-27
 ### Added
 - [JsonSchema] [GH#725](https://github.com/janephp/janephp/pull/725) Add discriminator support to anyOf
