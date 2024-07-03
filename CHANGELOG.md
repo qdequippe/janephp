@@ -6,6 +6,9 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+### Added
+- [Jane] [GH#809](https://github.com/janephp/janephp/pull/809) Add support for PHP Parser v5
+
 ### Fixed
 - [JsonSchema][OpenApiCommon] [GH#811](https://github.com/janephp/janephp/pull/811) add Symfony command configure() void return, avoid deprecations
 
