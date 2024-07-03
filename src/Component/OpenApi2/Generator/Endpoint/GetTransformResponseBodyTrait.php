@@ -69,7 +69,7 @@ trait GetTransformResponseBodyTrait
             $outputStatements = array_merge(
                 $outputStatements,
                 [
-                    new Stmt\Throw_(
+                    new Stmt\Expression(new Expr\Throw_(
                         new Expr\New_(
                             new Name($throwType),
                             [
@@ -77,7 +77,7 @@ trait GetTransformResponseBodyTrait
                                 new Arg(new Expr\Variable('body')),
                             ]
                         )
-                    ),
+                    )),
                 ]
             );
         }
@@ -156,9 +156,9 @@ EOD
 
             $returnType = null;
             $throwType = '\\' . $context->getCurrentSchema()->getNamespace() . '\\Exception\\' . $exceptionName;
-            $returnStmt = new Stmt\Throw_(new Expr\New_(new Name($throwType), $classGuess ? [
+            $returnStmt = new Stmt\Expression(new Expr\Throw_(new Expr\New_(new Name($throwType), $classGuess ? [
                 new Arg($serializeStmt), new Arg(new Expr\Variable('response')),
-            ] : [new Arg(new Expr\Variable('response'))]));
+            ] : [new Arg(new Expr\Variable('response'))])));
         }
 
         if ('default' === $status) {

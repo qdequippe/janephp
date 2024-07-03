@@ -17,8 +17,7 @@ class GeneratorFactory
 {
     public static function build(DenormalizerInterface $serializer, string $endpointGeneratorClass): GeneratorInterface
     {
-        $parserFactory = new ParserFactory();
-        $parser = $parserFactory->create(ParserFactory::PREFER_PHP7);
+        $parser = (new ParserFactory())->createForHostVersion();
 
         $bodyParameter = new BodyParameterGenerator($parser, $serializer);
         $nonBodyParameter = new NonBodyParameterGenerator($parser);

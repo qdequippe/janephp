@@ -2,6 +2,7 @@
 
 namespace Jane\Component\OpenApi3\Tests;
 
+use Jane\Component\JsonSchema\Tests\CodeStyleFixerTrait;
 use Jane\Component\OpenApi3\Tests\Client\Authentication\ApiKeyAuthAuthentication;
 use Jane\Component\OpenApi3\Tests\Client\Client;
 use Jane\Component\OpenApi3\Tests\Client\Exception\GetEndpointUnauthorizedException;
@@ -20,15 +21,24 @@ use Symfony\Component\Finder\SplFileInfo;
 
 class JaneOpenApiResourceTest extends TestCase
 {
+    use CodeStyleFixerTrait;
+
     /**
      * @dataProvider resourceProvider
      */
     public function testResources($name, SplFileInfo $testDirectory): void
     {
+        if ($this->shouldSkipPathForCurrentPhpParserVersion($testDirectory->getRealPath())) {
+            $this->markTestSkipped('Skip path ' . $testDirectory->getRealPath());
+        }
+
         // 1. Generate
         $command = new GenerateCommand(new ConfigLoader(), new SchemaLoader(), new OpenApiMatcher());
         $input = new ArrayInput(['--config-file' => $testDirectory->getRealPath() . \DIRECTORY_SEPARATOR . '.jane-openapi'], $command->getDefinition());
         $command->execute($input, new NullOutput());
+
+        $this->fixCodeStyle($testDirectory->getRealPath() . \DIRECTORY_SEPARATOR . 'expected');
+        $this->fixCodeStyle($testDirectory->getRealPath() . \DIRECTORY_SEPARATOR . 'generated');
 
         // 2. Compare
         $expectedFinder = new Finder();

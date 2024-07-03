@@ -18,28 +18,31 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         use NormalizerAwareTrait;
         use CheckArray;
         use ValidatorTrait;
-        protected $normalizers = array(
+        protected $normalizers = [
             
-            'Jane\\Component\\OpenApi3\\Tests\\Expected\\Model\\FooPayload' => 'Jane\\Component\\OpenApi3\\Tests\\Expected\\Normalizer\\FooPayloadNormalizer',
-            'Jane\\Component\\OpenApi3\\Tests\\Expected\\Model\\ResponseProblemDetailsResponse400' => 'Jane\\Component\\OpenApi3\\Tests\\Expected\\Normalizer\\ResponseProblemDetailsResponse400Normalizer',
-            'Jane\\Component\\OpenApi3\\Tests\\Expected\\Model\\ResponseProblemDetailsResponse500' => 'Jane\\Component\\OpenApi3\\Tests\\Expected\\Normalizer\\ResponseProblemDetailsResponse500Normalizer',
-            '\\Jane\\Component\\JsonSchemaRuntime\\Reference' => '\\Jane\\Component\\OpenApi3\\Tests\\Expected\\Runtime\\Normalizer\\ReferenceNormalizer',
-        ), $normalizersCache = [];
-        public function supportsDenormalization($data, $type, $format = null, array $context = []) : bool
+            \Jane\Component\OpenApi3\Tests\Expected\Model\FooPayload::class => \Jane\Component\OpenApi3\Tests\Expected\Normalizer\FooPayloadNormalizer::class,
+            
+            \Jane\Component\OpenApi3\Tests\Expected\Model\ResponseProblemDetailsResponse400::class => \Jane\Component\OpenApi3\Tests\Expected\Normalizer\ResponseProblemDetailsResponse400Normalizer::class,
+            
+            \Jane\Component\OpenApi3\Tests\Expected\Model\ResponseProblemDetailsResponse500::class => \Jane\Component\OpenApi3\Tests\Expected\Normalizer\ResponseProblemDetailsResponse500Normalizer::class,
+            
+            \Jane\Component\JsonSchemaRuntime\Reference::class => \Jane\Component\OpenApi3\Tests\Expected\Runtime\Normalizer\ReferenceNormalizer::class,
+        ], $normalizersCache = [];
+        public function supportsDenormalization($data, $type, $format = null, array $context = []): bool
         {
             return array_key_exists($type, $this->normalizers);
         }
-        public function supportsNormalization($data, $format = null, array $context = []) : bool
+        public function supportsNormalization($data, $format = null, array $context = []): bool
         {
             return is_object($data) && array_key_exists(get_class($data), $this->normalizers);
         }
-        public function normalize(mixed $object, string $format = null, array $context = []) : array|string|int|float|bool|\ArrayObject|null
+        public function normalize(mixed $object, string $format = null, array $context = []): array|string|int|float|bool|\ArrayObject|null
         {
             $normalizerClass = $this->normalizers[get_class($object)];
             $normalizer = $this->getNormalizer($normalizerClass);
             return $normalizer->normalize($object, $format, $context);
         }
-        public function denormalize(mixed $data, string $type, string $format = null, array $context = []) : mixed
+        public function denormalize(mixed $data, string $type, string $format = null, array $context = []): mixed
         {
             $denormalizerClass = $this->normalizers[$type];
             $denormalizer = $this->getNormalizer($denormalizerClass);
@@ -57,9 +60,9 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             $this->normalizersCache[$normalizerClass] = $normalizer;
             return $normalizer;
         }
-        public function getSupportedTypes(?string $format = null) : array
+        public function getSupportedTypes(?string $format = null): array
         {
-            return ['Jane\\Component\\OpenApi3\\Tests\\Expected\\Model\\FooPayload' => false, 'Jane\\Component\\OpenApi3\\Tests\\Expected\\Model\\ResponseProblemDetailsResponse400' => false, 'Jane\\Component\\OpenApi3\\Tests\\Expected\\Model\\ResponseProblemDetailsResponse500' => false, '\\Jane\\Component\\JsonSchemaRuntime\\Reference' => false];
+            return [\Jane\Component\OpenApi3\Tests\Expected\Model\FooPayload::class => false, \Jane\Component\OpenApi3\Tests\Expected\Model\ResponseProblemDetailsResponse400::class => false, \Jane\Component\OpenApi3\Tests\Expected\Model\ResponseProblemDetailsResponse500::class => false, \Jane\Component\JsonSchemaRuntime\Reference::class => false];
         }
     }
 } else {
@@ -69,18 +72,21 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         use NormalizerAwareTrait;
         use CheckArray;
         use ValidatorTrait;
-        protected $normalizers = array(
+        protected $normalizers = [
             
-            'Jane\\Component\\OpenApi3\\Tests\\Expected\\Model\\FooPayload' => 'Jane\\Component\\OpenApi3\\Tests\\Expected\\Normalizer\\FooPayloadNormalizer',
-            'Jane\\Component\\OpenApi3\\Tests\\Expected\\Model\\ResponseProblemDetailsResponse400' => 'Jane\\Component\\OpenApi3\\Tests\\Expected\\Normalizer\\ResponseProblemDetailsResponse400Normalizer',
-            'Jane\\Component\\OpenApi3\\Tests\\Expected\\Model\\ResponseProblemDetailsResponse500' => 'Jane\\Component\\OpenApi3\\Tests\\Expected\\Normalizer\\ResponseProblemDetailsResponse500Normalizer',
-            '\\Jane\\Component\\JsonSchemaRuntime\\Reference' => '\\Jane\\Component\\OpenApi3\\Tests\\Expected\\Runtime\\Normalizer\\ReferenceNormalizer',
-        ), $normalizersCache = [];
-        public function supportsDenormalization($data, $type, $format = null, array $context = []) : bool
+            \Jane\Component\OpenApi3\Tests\Expected\Model\FooPayload::class => \Jane\Component\OpenApi3\Tests\Expected\Normalizer\FooPayloadNormalizer::class,
+            
+            \Jane\Component\OpenApi3\Tests\Expected\Model\ResponseProblemDetailsResponse400::class => \Jane\Component\OpenApi3\Tests\Expected\Normalizer\ResponseProblemDetailsResponse400Normalizer::class,
+            
+            \Jane\Component\OpenApi3\Tests\Expected\Model\ResponseProblemDetailsResponse500::class => \Jane\Component\OpenApi3\Tests\Expected\Normalizer\ResponseProblemDetailsResponse500Normalizer::class,
+            
+            \Jane\Component\JsonSchemaRuntime\Reference::class => \Jane\Component\OpenApi3\Tests\Expected\Runtime\Normalizer\ReferenceNormalizer::class,
+        ], $normalizersCache = [];
+        public function supportsDenormalization($data, $type, $format = null, array $context = []): bool
         {
             return array_key_exists($type, $this->normalizers);
         }
-        public function supportsNormalization($data, $format = null, array $context = []) : bool
+        public function supportsNormalization($data, $format = null, array $context = []): bool
         {
             return is_object($data) && array_key_exists(get_class($data), $this->normalizers);
         }
@@ -114,9 +120,9 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             $this->normalizersCache[$normalizerClass] = $normalizer;
             return $normalizer;
         }
-        public function getSupportedTypes(?string $format = null) : array
+        public function getSupportedTypes(?string $format = null): array
         {
-            return ['Jane\\Component\\OpenApi3\\Tests\\Expected\\Model\\FooPayload' => false, 'Jane\\Component\\OpenApi3\\Tests\\Expected\\Model\\ResponseProblemDetailsResponse400' => false, 'Jane\\Component\\OpenApi3\\Tests\\Expected\\Model\\ResponseProblemDetailsResponse500' => false, '\\Jane\\Component\\JsonSchemaRuntime\\Reference' => false];
+            return [\Jane\Component\OpenApi3\Tests\Expected\Model\FooPayload::class => false, \Jane\Component\OpenApi3\Tests\Expected\Model\ResponseProblemDetailsResponse400::class => false, \Jane\Component\OpenApi3\Tests\Expected\Model\ResponseProblemDetailsResponse500::class => false, \Jane\Component\JsonSchemaRuntime\Reference::class => false];
         }
     }
 }
