@@ -6,6 +6,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+
+## [7.8.0] - 2024-07-04
 ### Added
 - [Jane] [GH#809](https://github.com/janephp/janephp/pull/809) Add support for PHP Parser v5
 
@@ -758,7 +760,8 @@ See :
 * https://github.com/janephp/jane/releases
 * https://github.com/janephp/openapi/releases
 
-[Unreleased]: https://github.com/janephp/janephp/compare/v7.7.0...HEAD
+[Unreleased]: https://github.com/janephp/janephp/compare/v7.8.0...HEAD
+[7.8.0]: https://github.com/janephp/janephp/compare/v7.7.0...v7.8.0
 [7.7.0]: https://github.com/janephp/janephp/compare/v7.6.2...v7.7.0
 [7.6.2]: https://github.com/janephp/janephp/compare/v7.6.1...v7.6.2
 [7.6.1]: https://github.com/janephp/janephp/compare/v7.6.0...v7.6.1
