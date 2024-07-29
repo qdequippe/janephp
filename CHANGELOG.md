@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 - [JsonSchema] [GH#819](https://github.com/janephp/janephp/pull/819) Fix fully qualified name generation in Normalizers
 - [JsonSchema] [GH#818](https://github.com/janephp/janephp/pull/818) Add null safe method calls for nullable date and datetime properties for normalizer generation
+- [JsonSchema] [GH#821](https://github.com/janephp/janephp/pull/821) JaneObjectNormalizer::getSupportedTypes is now produced multiline
 
 ## [7.8.0] - 2024-07-04
 ### Added
