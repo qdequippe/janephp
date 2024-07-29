@@ -17,5 +17,5 @@ tests/fixtures/*/generated
 cache/*
 !cache/.gitkeep
 
-tools/*/composer.lock
+!tools/*/composer.lock
 tools/*/vendor
