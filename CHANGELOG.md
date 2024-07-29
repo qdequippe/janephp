@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [7.8.1] - 2024-07-29
 ### Fixed
 - [JsonSchema] [GH#819](https://github.com/janephp/janephp/pull/819) Fix fully qualified name generation in Normalizers
 - [JsonSchema] [GH#818](https://github.com/janephp/janephp/pull/818) Add null safe method calls for nullable date and datetime properties for normalizer generation
@@ -765,7 +766,8 @@ See :
 * https://github.com/janephp/jane/releases
 * https://github.com/janephp/openapi/releases
 
-[Unreleased]: https://github.com/janephp/janephp/compare/v7.8.0...HEAD
+[Unreleased]: https://github.com/janephp/janephp/compare/v7.8.1...HEAD
+[7.8.1]: https://github.com/janephp/janephp/compare/v7.8.0...v7.8.1
 [7.8.0]: https://github.com/janephp/janephp/compare/v7.7.0...v7.8.0
 [7.7.0]: https://github.com/janephp/janephp/compare/v7.6.2...v7.7.0
 [7.6.2]: https://github.com/janephp/janephp/compare/v7.6.1...v7.6.2
