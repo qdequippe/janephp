@@ -7,6 +7,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Fixed
+- [JsonSchema] [GH#819](https://github.com/janephp/janephp/pull/819) Fix fully qualified name generation in Normalizers
+
 ## [7.8.0] - 2024-07-04
 ### Added
 - [Jane] [GH#809](https://github.com/janephp/janephp/pull/809) Add support for PHP Parser v5
