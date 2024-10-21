@@ -37,6 +37,17 @@ class FormBodyContentGenerator extends AbstractBodyContentGenerator
                                 new Expr\Variable('value')
                             )
                         )),
+                        new Stmt\Expression(new Expr\Assign(new Expr\Variable('value'),
+                            new Expr\Ternary(
+                                new Expr\FuncCall(new Name('is_bool'), [new Arg(new Expr\Variable('value'))]),
+                                new Expr\Ternary(
+                                    new Expr\Variable('value'),
+                                    new Scalar\String_('true'),
+                                    new Scalar\String_('false'),
+                                ),
+                                new Expr\Variable('value')
+                            )
+                        )),
                         new Stmt\Expression(new Expr\MethodCall(new Expr\Variable('bodyBuilder'), 'addResource', [
                             new Arg(new Expr\Variable('key')),
                             new Arg(new Expr\Variable('value')),
